@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Astrune — Legal &amp; Support</title>
+<meta name="description" content="Astrune — your chart, your day, your patterns. Privacy policy, terms of service, and support for the Astrune astrology app." />
+<link rel="icon" type="image/png" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Surfaces */
+  --bg: #0D0A16;
+  --surface: #15101F;
+  --card-alt: #1A1426;
+
+  /* Ink */
+  --ink: #F2ECE0;
+  --ink-soft: #B6ADC4;
+  --ink-muted: #756C88;
+  --ink-chevron: #E4DCCB;
+
+  /* Borders */
+  --border: rgba(255,255,255,0.10);
+  --border-light: rgba(255,255,255,0.06);
+  --border-input: rgba(255,255,255,0.16);
+  --divider: rgba(255,255,255,0.08);
+
+  /* Brand — Gold (primary) */
+  --gold: #D2A45A;
+  --gold-bright: #F2E1B6;
+  --gold-deep: #9C7330;
+  --brand: #6E4A2A;
+  --brand-light: #A9743F;
+
+  /* Brand — Periwinkle (secondary, cool counterpoint) */
+  --periwinkle: #6F7CB2;
+  --periwinkle-light: #8D99CF;
+
+  /* Buttons */
+  --btn-secondary: rgba(255,255,255,0.06);
+  --btn-secondary-fg: var(--ink);
+
+  /* Status */
+  --danger: #E0645A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ─── AMBIENT BACKGROUND ─── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 55% at 15% 5%, rgba(210,164,90,0.16) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 45% at 85% 85%, rgba(111,124,178,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(156,115,48,0.08) 0%, transparent 70%);
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(242,225,182,0.9) 0px, transparent 1.4px),
+    radial-gradient(circle at 70% 65%, rgba(242,225,182,0.7) 0px, transparent 1.4px),
+    radial-gradient(circle at 45% 82%, rgba(242,225,182,0.6) 0px, transparent 1.2px),
+    radial-gradient(circle at 85% 22%, rgba(242,225,182,0.8) 0px, transparent 1.4px),
+    radial-gradient(circle at 8% 62%, rgba(242,225,182,0.5) 0px, transparent 1.2px),
+    radial-gradient(circle at 92% 78%, rgba(242,225,182,0.6) 0px, transparent 1.2px),
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 340px 340px, 280px 280px, 400px 400px, 240px 240px, 360px 360px, 300px 300px, 56px 56px, 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, transparent 100%);
+}
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  height: 64px; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(13,10,22,0.72);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 1px 0 rgba(0,0,0,0.4);
+}
+
+.nav-brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+
+.nav-logo {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(210,164,90,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.nav-name {
+  font-size: 17px; font-weight: 700; letter-spacing: -0.4px;
+  color: var(--ink);
+  font-family: Georgia, serif;
+}
+
+.nav-links { list-style: none; display: flex; gap: 2px; }
+
+.nav-links a {
+  text-decoration: none; color: var(--ink-soft);
+  font-size: 14px; font-weight: 500;
+  padding: 7px 14px; border-radius: 10px;
+  transition: color .15s, background .15s;
+}
+
+.nav-links a:hover { color: var(--ink); background: rgba(255,255,255,0.06); }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 110px 24px 80px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(210,164,90,0.14);
+  border: 1px solid rgba(210,164,90,0.32);
+  backdrop-filter: blur(12px);
+  border-radius: 100px; padding: 6px 16px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase;
+  color: var(--gold-bright); margin-bottom: 30px;
+}
+
+.hero-pill svg { width: 11px; height: 11px; }
+
+.hero h1 {
+  font-size: clamp(44px, 8vw, 76px);
+  font-weight: 700; letter-spacing: -2.5px; line-height: 1.02;
+  font-family: Georgia, serif;
+  background: linear-gradient(165deg, var(--ink) 20%, var(--gold-bright) 130%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 20px;
+}
+
+.hero p { font-size: 18px; color: var(--ink-soft); max-width: 460px; line-height: 1.7; }
+
+/* ─── CARDS ─── */
+.cards {
+  position: relative; z-index: 1;
+  max-width: 1020px; margin: 0 auto;
+  padding: 0 24px 110px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+
+.card {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px 28px 28px;
+  text-decoration: none;
+  display: flex; flex-direction: column; gap: 14px;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              border-color .2s, background .2s, box-shadow .25s;
+}
+
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 55%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.card::after {
+  content: '';
+  position: absolute; top: 0; left: 15%; right: 15%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.20), transparent);
+}
+
+.card:hover {
+  transform: translateY(-7px) scale(1.012);
+  background: rgba(255,255,255,0.075);
+  border-color: rgba(210,164,90,0.38);
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(210,164,90,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.card:hover .card-glow { opacity: 1; }
+
+.card-glow {
+  position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 80px;
+  background: radial-gradient(ellipse, rgba(210,164,90,0.22) 0%, transparent 70%);
+  pointer-events: none; opacity: 0;
+  transition: opacity .3s;
+}
+
+.icon-box {
+  width: 52px; height: 52px; border-radius: 15px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+
+.icon-box::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 100%);
+}
+
+.icon-box svg { width: 22px; height: 22px; position: relative; z-index: 1; }
+
+.icon-box.gold {
+  background: rgba(210,164,90,0.14);
+  border: 1px solid rgba(210,164,90,0.32);
+}
+.icon-box.gold svg { color: var(--gold-bright); }
+
+.icon-box.periwinkle {
+  background: rgba(111,124,178,0.16);
+  border: 1px solid rgba(111,124,178,0.38);
+}
+.icon-box.periwinkle svg { color: var(--periwinkle-light); }
+
+.icon-box.bronze {
+  background: rgba(169,116,63,0.16);
+  border: 1px solid rgba(169,116,63,0.38);
+}
+.icon-box.bronze svg { color: var(--brand-light); }
+
+.card-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--ink-muted);
+  font-family: 'DM Mono', monospace;
+}
+
+.card h2 {
+  font-size: 20px; font-weight: 700; letter-spacing: -0.4px;
+  color: var(--ink);
+  font-family: Georgia, serif;
+}
+
+.card p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; flex: 1; }
+
+.card-link {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 14px; font-weight: 600; color: var(--gold-bright);
+}
+
+.card-link svg { width: 14px; height: 14px; transition: transform .2s; }
+.card:hover .card-link svg { transform: translateX(5px); }
+
+/* ─── FOOTER ─── */
+footer {
+  position: relative; z-index: 1;
+  text-align: center; padding: 32px 24px;
+  font-size: 13px; color: var(--ink-muted);
+  background: rgba(255,255,255,0.025);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--gold-bright); text-decoration: none; }
+footer strong { color: var(--ink-soft); }
+
+@media (max-width: 800px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  nav {
+    height: auto;
+    min-height: 64px;
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links::-webkit-scrollbar { display: none; }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 13px;
+    background: rgba(255,255,255,0.05);
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="." class="nav-brand">
+    <div class="nav-logo">
+      <img src="assets/logo-512.png" alt="Astrune logo" width="36" height="36" />
+    </div>
+    <span class="nav-name">Astrune</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="privacy-policy/">Privacy Policy</a></li>
+    <li><a href="terms-of-service/">Terms of Service</a></li>
+    <li><a href="contact/">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+      Astrune
+    </div>
+    <h1>Legal &amp; Support</h1>
+    <p>Everything you need to know about your privacy, our policies, and how to reach us.</p>
+  </section>
+
+  <div class="cards">
+
+    <a href="privacy-policy/" class="card">
+      <div class="card-glow"></div>
+      <div class="icon-box gold">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <div class="card-tag">Legal</div>
+      <h2>Privacy Policy</h2>
+      <p>How we collect, use, and protect your birth details, chart data, and personal information when you use Astrune.</p>
+      <span class="card-link">Read
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="terms-of-service/" class="card">
+      <div class="card-glow"></div>
+      <div class="icon-box periwinkle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <line x1="10" y1="9" x2="8" y2="9"/>
+        </svg>
+      </div>
+      <div class="card-tag">Legal</div>
+      <h2>Terms of Service</h2>
+      <p>The rules and agreements that govern your use of Astrune and its AI-generated astrology readings.</p>
+      <span class="card-link">Read
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="contact/" class="card">
+      <div class="card-glow"></div>
+      <div class="icon-box bronze">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div class="card-tag">Support</div>
+      <h2>Contact Us</h2>
+      <p>Have a question or need help? We'd love to hear from you about your chart, readings, or account.</p>
+      <span class="card-link">Get in touch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 <strong>Astrune</strong> · All rights reserved · <a href="contact/">support@astruneapp.com</a>
+</footer>
+
+</body>
+</html>
